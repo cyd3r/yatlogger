@@ -1,5 +1,7 @@
 # Yet Another Telegram Logger
 
+A python library to log messages and exceptions to your [Telegram bot](https://core.telegram.org/bots).
+
 ## Setup
 
 ### 1. Create a bot
@@ -32,7 +34,7 @@ When you are done, you can simply interrupt the register service with <kbd>Ctrl<
 
 ## Usage
 
-yatlogger registers itself as a handler for the `logging` module. Here is an example:
+yatlogger registers itself as a handler for the built-in [logging](https://docs.python.org/3/library/logging.html) module. Here is an example:
 
 ``` python
 import logging
@@ -46,5 +48,7 @@ logger.info("Read this on your phone!")
 raise ValueError("This unhandled exception will be sent to Telegram, too!")
 
 ```
+
+And the resulting chat messages:
 
 ![log messages on telegram](https://raw.githubusercontent.com/cyd3r/yatlogger/main/docs/logs.jpg)
