@@ -1,8 +1,21 @@
 [tool.poetry]
 name = "yatlogger"
-version = "0.1.0"
+version = "0.1.2"
 description = "Yet another telegram logger"
 authors = ["cyd3r <cyd3rhacker@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/cyd3r/yatlogger"
+repository = "https://github.com/cyd3r/yatlogger"
+keywords = ["logger", "telegram", "chat bot", "notification", "exception handler"]
+classifiers = [
+    "Topic :: System :: Logging",
+    "Topic :: Communications :: Chat",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License"
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"

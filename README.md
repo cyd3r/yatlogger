@@ -26,7 +26,7 @@ Run `python -m yatlogger` to start the register service. As long as this service
 
 To register a chat, start a chat with your bot and enter the 6 digit pin you see on the logging machine.
 
-![register a new chat](./docs/register_chat.jpg)
+![register a new chat](https://raw.githubusercontent.com/cyd3r/yatlogger/main/docs/register_chat.jpg)
 
 When you are done, you can simply interrupt the register service with <kbd>Ctrl</kbd> + <kbd>C</kbd>
 
@@ -47,4 +47,4 @@ raise ValueError("This unhandled exception will be sent to Telegram, too!")
 
 ```
 
-![log messages on telegram](./docs/logs.jpg)
+![log messages on telegram](https://raw.githubusercontent.com/cyd3r/yatlogger/main/docs/logs.jpg)
