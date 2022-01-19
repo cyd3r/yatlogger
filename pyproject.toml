@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "yatlogger"
-version = "0.1.2"
+version = "0.2.0"
 description = "Yet another telegram logger"
 authors = ["cyd3r <cyd3rhacker@gmail.com>"]
 license = "MIT"
@@ -19,7 +19,6 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.8"
-python-telegram-bot = "^13.6"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

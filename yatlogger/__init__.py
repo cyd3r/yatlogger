@@ -3,12 +3,12 @@ import logging
 from logging import LogRecord
 from pathlib import Path
 from typing import Union
-import telegram
-from telegram.utils.helpers import escape_markdown
+
 from .config import get_config
+from .bot import send, escape_markdown
 
 
-__version__ = '0.1.2'
+__version__ = "0.2.0"
 
 
 class TelegramHandler(logging.Handler):
@@ -38,14 +38,14 @@ class TelegramHandler(logging.Handler):
         elif not isinstance(config, dict):
             config = get_config(config)
 
-        self.bot = telegram.Bot(token=config["token"])
+        self.token = config["token"]
         self.chat_ids = config["users"]
 
     def emit(self, record: LogRecord):
-        message = escape_markdown(self.format(record), version=2)
+        message = escape_markdown(self.format(record))
         session_name = None
         if self.session_name is not None:
-            session_name = escape_markdown(self.session_name, version=2)
+            session_name = escape_markdown(self.session_name)
 
         prepend = ""
         if record.levelno == logging.ERROR:
@@ -57,8 +57,7 @@ class TelegramHandler(logging.Handler):
             prepend = f"_{session_name}_\n"
 
         for chat_id in self.chat_ids:
-            self.bot.send_message(chat_id=chat_id, text=prepend + message,
-                                  parse_mode="MarkdownV2")
+            send(prepend + message, chat_id, self.token, is_escaped=True)
 
 
 def register(session_name: str = None, logger_name: str = None,
